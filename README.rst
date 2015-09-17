@@ -13,12 +13,13 @@ pyglobalgoals is a Python program for working with
 The Global Goals For Sustainable Development.
 
 * Free software: BSD license
-* Documentation: https://pyglobalgoals.readthedocs.org.
 
-Features
---------
-
-* TODO
+  
+.. * Documentation: https://pyglobalgoals.readthedocs.org.
+.. Features
+.. --------
+.. 
+.. * TODO
 
 
 Global Goals
