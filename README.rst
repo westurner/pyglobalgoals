@@ -42,6 +42,9 @@ Global Goals
 pyglobalgoals
 ===============
 
-* Homepage: https://github.com/westurner/pyglobalgoals
-* Src: https://github.com/westurner/pyglobalgoals
-* Download: https://github.com/westurner/pyglobalgoals/releases
+| Homepage: https://github.com/westurner/pyglobalgoals
+| Src: https://github.com/westurner/pyglobalgoals
+| Download: https://github.com/westurner/pyglobalgoals/releases
+
+* `<https://github.com/westurner/pyglobalgoals/blob/master/notebooks/globalgoals-pyglobalgoals.py.ipynb>`__
+* `<https://github.com/westurner/pyglobalgoals/blob/develop/notebooks/globalgoals-pyglobalgoals.py.ipynb>`__
