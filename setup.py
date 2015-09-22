@@ -15,12 +15,15 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read().replace('.. :changelog:', '')
 
 requirements = [
-    'tweepy',
     'beautifulsoup4',
+    'docutils',
+    'jinja2'
+    'requests',
+    'requests_cache',
+    #'tweepy',
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
 ]
 
 setup(

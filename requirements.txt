@@ -1,3 +1,7 @@
 wheel==0.23.0
-tweepy
 beautifulsoup4
+docutils
+jinja2
+requests
+requests_cache
+#tweepy
