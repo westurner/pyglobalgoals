@@ -79,3 +79,27 @@ dist: clean
 
 install: clean
 	python setup.py install
+
+install-env:
+	$(MAKE) conda-env-install
+
+
+pip-freeze:
+	# Note: these are not included in the git repo
+	pip freeze > ./requirements.global.pipfreeze.txt
+	pip freeze -l > ./requirements.local.pipfreeze.txt
+	pip freeze --user > ./requirements.user.pipfreeze.txt
+
+
+CONDAENV_NAME:=pyglobalgoals
+conda-env-dump:
+	conda env export -n=${CONDAENV_NAME} > environment.yml
+
+conda-env-install:
+	conda env create -n=${CONDAENV_NAME} -f=./environment.yml
+
+conda-env-update:
+	conda env update -n=${CONDAENV_NAME} -f=./environment.yml
+
+ipython-notebook:
+	ipython notebook .

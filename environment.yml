@@ -1,0 +1,15 @@
+name: pyglobalgoals
+dependencies:
+- beautiful-soup
+- docutils
+- ipython
+- ipython-notebook
+- jinja2
+- jupyter
+- path.py
+- requests
+- pip:
+  - requests-cache
+  - tweepy
+  - version_information
+  - git+https://github.com/westurner/pyglobalgoals#egg=pyglobalgoals
