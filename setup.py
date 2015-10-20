@@ -28,7 +28,7 @@ test_requirements = [
 
 setup(
     name='pyglobalgoals',
-    version='0.2.0',
+    version='0.2.2',
     description="pyglobalgoals is a Python program for working with The Global Goals For Sustainable Developm",
     long_description=readme + '\n\n' + history,
     author="Wes Turner",
