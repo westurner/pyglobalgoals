@@ -17,7 +17,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'beautifulsoup4',
     'docutils',
-    'jinja2'
+    'jinja2',
     'requests',
     'requests_cache',
     #'tweepy',
