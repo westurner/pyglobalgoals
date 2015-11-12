@@ -12,7 +12,7 @@
     }, 
     "description": {
       "@id": "http://schema.org/description", 
-      "@type": "@id"
+      "@type": "http://schema.org/Text"
     }
   }, 
   "@graph": [
