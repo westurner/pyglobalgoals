@@ -17,7 +17,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'beautifulsoup4',
     'docutils',
-    'jinja2'
+    'jinja2',
     'requests',
     'requests_cache',
     #'tweepy',
@@ -28,7 +28,7 @@ test_requirements = [
 
 setup(
     name='pyglobalgoals',
-    version='0.2.2',
+    version='0.2.3',
     description="pyglobalgoals is a Python program for working with The Global Goals For Sustainable Developm",
     long_description=readme + '\n\n' + history,
     author="Wes Turner",
