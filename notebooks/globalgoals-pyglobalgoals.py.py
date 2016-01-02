@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# #@TheGlobalGoals for Sustainable Development
+# # @TheGlobalGoals for Sustainable Development
 
 # ## Background
 # 
@@ -78,14 +78,15 @@
 # In[1]:
 
 #!conda install -y beautiful-soup docutils jinja2 requests
-get_ipython().system(u'pip install -U beautifulsoup4 jinja2 requests==2.8.1 requests-cache version-information # tweepy')
+get_ipython().system(u"pip install -U beautifulsoup4 jinja2 'requests<2.8' requests-cache version-information # tweepy")
+
 
 import bs4
 import jinja2
 import requests
 import requests_cache
 
-#requests_cache.install_cache('pyglobalgoals_cache')
+requests_cache.install_cache('pyglobalgoals_cache')
 
 #!pip install -U version_information
 get_ipython().magic(u'load_ext version_information')
@@ -202,7 +203,7 @@ def build_default_context():
         "@id":"http://schema.org/url"
     }
     context["description"] = {
-        "@type": "@id",
+        "@type": "http://schema.org/Text",
         "@id": "http://schema.org/description"
     }
     return context
@@ -581,7 +582,8 @@ IPython.display.HTML(output_html)
 import jinja2
 # TODO: prefix un:
 TMPL_RDFA_HTML5 = ("""
-<div prefix="schema: http://schema.org" prefix="un: http://un.org/ns/un#">
+<div prefix="schema: http://schema.org/
+             un: http://schema.un.org/#">
 <h1>The Global Goals</h1>
 <h2>Contents:</h2>
 {%- for node in nodes %}
@@ -633,9 +635,4 @@ for line in difflib.unified_diff(
     TMPL_HTML.splitlines(),
     TMPL_RDFA_HTML5.splitlines()):
     print(line)
-
-
-# In[ ]:
-
-
 
