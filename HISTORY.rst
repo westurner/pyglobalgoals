@@ -3,15 +3,18 @@
 History
 -------
 
-v0.2.4 (2016-01-02 12:47:02 -0600)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+release/0.2.4 (2016-01-02 12:59:42 -0600)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-   git log --reverse --pretty=format:'* %s [%h]' v0.2.3..develop
+   git log --reverse --pretty=format:'* %s [%h]' v0.2.3..release/0.2.4
 
 * Merge tag 'v0.2.3' into develop [c4e3113]
 * REF: pyglobalgoals-svg.ipynb: from globalgoals-pyglobalgoals.ipynb [92b9afd]
-
+* RLS: setup.py, __init__.py: v0.2.4 [fe9af0e]
+* DOC: HISTORY.rst: output from ``git-changelog.py -r 'release/0.2.4'``
 
 v0.2.3 (2015-12-04 07:55:38 -0600)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,6 +114,4 @@ v0.1.0 (2015-09-21 19:13:55 -0500)
 * DOC: README.rst [de60156]
 * ENH: notebooks/data/images, IPython.display. [f0a0d2a]
 * Merge branch 'release/0.1.0' [8285337]
-
-
 
