@@ -28,8 +28,8 @@ test_requirements = [
 
 setup(
     name='pyglobalgoals',
-    version='0.2.3',
-    description="pyglobalgoals is a Python program for working with The Global Goals For Sustainable Developm",
+    version='0.2.4',
+    description=("pyglobalgoals is a Python package, Python module, and a set of Python Jupyter notebooks for working with JSON-LD, RDFa, schema.org and The Global Goals For Sustainable Development"),
     long_description=readme + '\n\n' + history,
     author="Wes Turner",
     author_email='wes@wrd.nu',
