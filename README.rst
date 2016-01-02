@@ -9,12 +9,10 @@ pyglobalgoals
 ..        :target: https://pypi.python.org/pypi/pyglobalgoals
 
 
-pyglobalgoals is a Python program for working with
-The Global Goals For Sustainable Development.
+pyglobalgoals is a Python package, Python module, and a set of Python Jupyter notebooks for working with JSON-LD, RDFa, schema.org and The Global Goals For Sustainable Development (#GlobalGoals #GGs #SDG #SDGs) #GG17
 
 * Free software: BSD license
 
-  
 .. * Documentation: https://pyglobalgoals.readthedocs.org.
 .. Features
 .. --------
