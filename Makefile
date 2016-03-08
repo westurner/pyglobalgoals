@@ -103,3 +103,10 @@ conda-env-update:
 
 ipython-notebook:
 	ipython notebook .
+
+jupyter-notebook:
+	jupyter-notebook .
+
+nbconvert:
+	jupyter-nbconvert ./notebooks/*.ipynb --to python
+	jupyter-nbconvert ./notebooks/*.ipynb --to html
