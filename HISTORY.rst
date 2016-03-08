@@ -5,16 +5,34 @@ History
 
 
 
-release/0.2.4 (2016-01-02 12:59:42 -0600)
+release/0.2.5 (2016-03-08 17:18:54 -0600)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-   git log --reverse --pretty=format:'* %s [%h]' v0.2.3..release/0.2.4
+   git log --reverse --pretty=format:'* %s [%h]' v0.2.4..release/0.2.5
+
+* Merge tag 'v0.2.4' into develop [ff318c7]
+* DOC: README.rst: [schema:]description [cba7b86]
+* BUG: glogbalgoals-pyglobalgoals.py.{py,ipynb}: RDFa prefix= attribute newlines [561c574]
+* Merge remote-tracking branch 'origin/develop' into develop [64a7c50]
+* BLD: Makefile: jupyter-notebook nbconvert [8ec96bf]
+* DOC,BUG: globalgoals-pyglobalgoals.py.ipynb, notebooks/data: title, links, get_goal_tile_data, new img URLs [d99cc93]
+* RLS,DOC: globalgoals-pyglobalgoals.py.ipynb: #GG17, v0.2.5, restart/clear/runall [3d3722f]
+* RLS: setup.py, __init__.py: v0.2.5 [6b7c8aa]
+
+
+v0.2.4 (2016-01-02 13:06:54 -0600)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+   git log --reverse --pretty=format:'* %s [%h]' v0.2.3..v0.2.4
 
 * Merge tag 'v0.2.3' into develop [c4e3113]
 * REF: pyglobalgoals-svg.ipynb: from globalgoals-pyglobalgoals.ipynb [92b9afd]
 * RLS: setup.py, __init__.py: v0.2.4 [fe9af0e]
-* DOC: HISTORY.rst: output from ``git-changelog.py -r 'release/0.2.4'``
+* DOC: HISTORY.rst: output from ``git-changelog.py -r release/0.2.4`` [ee7bd20]
+* Merge branch 'release/0.2.4' [6094bbd]
+
 
 v0.2.3 (2015-12-04 07:55:38 -0600)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
