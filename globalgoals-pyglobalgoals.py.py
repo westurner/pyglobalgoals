@@ -1,12 +1,15 @@
 
 # coding: utf-8
 
-# # @TheGlobalGoals for Sustainable Development
+# # globalgoals-pyglobalgoals.py.ipynb
+# 
+# A jupyter notebook demonstrating HTML parsing, JSON-LD, RDFa, and schema.org in order to add Schema.org RDFa markup to @TheGlobalGoals for Sustainable Development at http://www.globalgoals.org/
 
 # ## Background
 # 
 # * Homepage: **http://www.globalgoals.org/**
 # - Twitter: https://twitter.com/TheGlobalGoals
+# - Twitter: https://twitter.com/GlobalGoalsUN
 # - Instagram: https://instagram.com/TheGlobalGoals/
 # - Facebook: https://www.facebook.com/globalgoals.org
 # - YouTube: https://www.youtube.com/channel/UCRfuAYy7MesZmgOi1Ezy0ng/
@@ -18,6 +21,14 @@
 #   - https://twitter.com/hashtag/TheGlobalGoals
 #   - https://instagram.com/explore/tags/TheGlobalGoals/
 #   - https://www.facebook.com/hashtag/TheGlobalGoals
+# - Hashtag: #Goal17
+#   - https://twitter.com/hashtag/Goal17
+#   - https://instagram.com/explore/tags/Goal17/
+#   - https://www.facebook.com/hashtag/Goal17
+# - Hashtag: #GlobalGoal17
+#   - https://twitter.com/hashtag/GlobalGoal17
+#   - https://instagram.com/explore/tags/GlobalGoal17/
+#   - https://www.facebook.com/hashtag/GlobalGoal17
 # 
 # 
 # ### pyglobalgoals
@@ -130,6 +141,8 @@ pp(tiles)
 
 tile = tiles[0]
 print(tile)
+print('##')
+print(tile.prettify())
 
 
 # In[6]:
@@ -161,13 +174,17 @@ def get_data_from_goal_tile_wrapper_div(node, n=None):
     return output
 
 def get_goal_tile_data(bs):
-    for i, tile in enumerate(bs.find_all(class_='goal-tile-wrapper'), 1):
-        yield get_data_from_goal_tile_wrapper_div(tile, n=i) 
+    for i, tile in enumerate(bs.find_all(class_='goal-tile-wrapper')[:-1], 1):
+        try:
+            yield get_data_from_goal_tile_wrapper_div(tile, n=i)
+        except KeyError as e:
+            print((i, tile))
+            raise
         
 tiles = list(get_goal_tile_data(bs))
 import json
 print(json.dumps(tiles, indent=2))
-goal_tiles = tiles[:-1]
+goal_tiles = tiles
 
 
 # In[ ]:
