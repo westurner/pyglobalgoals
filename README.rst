@@ -46,3 +46,16 @@ pyglobalgoals
 
 * `<https://github.com/westurner/pyglobalgoals/blob/master/notebooks/globalgoals-pyglobalgoals.py.ipynb>`__
 * `<https://github.com/westurner/pyglobalgoals/blob/develop/notebooks/globalgoals-pyglobalgoals.py.ipynb>`__
+
+
+License
+===========
+* pyglobalgoals: BSD License
+  ``LICENSE``
+* GlobalGoals explanations and descriptions:
+  Creative Commons Attribution-ShareAlike 3.0
+  https://creativecommons.org/licenses/by-sa/3.0/
+  ``LICENSE.cc-by-sa-3.0.html``
+* GlobalGoals images (provided by Getty Images):
+  http://www.globalgoals.org/asset-licence/
+  ``LICENSE.globalgoals-asset-license.html``
