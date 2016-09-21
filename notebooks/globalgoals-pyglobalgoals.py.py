@@ -482,7 +482,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[20]:
+# In[38]:
 
 TMPL_RST = """
 
@@ -499,6 +499,9 @@ The Global Goals
 .. image:: {{ node['image'] }}{# node['image_path'] #}
    :target: {{ node['url'] }}
    :alt: {{ node['name'] }} 
+
+- SDG{{ node['n'] }}: {{ node['sdgLink'] }}
+- UN Stats SDG{{ node['n'] }} 2016 Report: {{ node['sdgReport2016Link'] }}
 
 ..
 
@@ -532,7 +535,7 @@ print(bs4.BeautifulSoup(output_rst_html).find(id='the-global-goals'))
 IPython.display.HTML(output_rst_html)
 
 
-# In[24]:
+# In[39]:
 
 
 TMPL_MD = """
@@ -549,6 +552,9 @@ TMPL_MD = """
 {{ node['url'] }}
 
 [![{{node['name_numbered']}}]({{ node['image'] }})]({{ node['url'] }})
+
+- SDG{{ node['n'] }}: {{ node['sdgLink'] }}
+- UN Stats SDG{{ node['n'] }} 2016 Report: {{ node['sdgReport2016Link'] }}
 
 > {{ node['tweet_txt'] }}
 
@@ -577,7 +583,7 @@ IPython.display.Markdown(output_markdown)
 context = dict(nodes=goal_tiles)
 
 
-# In[28]:
+# In[49]:
 
 TMPL_HTML = """
 
@@ -590,9 +596,13 @@ TMPL_HTML = """
 {% for node in nodes %}
 <div class="goal-tile">
   <h2><a name="#{{node.slug_md}}">{{ node.name_numbered }}</a></h2>
-  <a href="{{node.url}}">{{node.url}} </a>
   <a href="{{node.url}}">
     <img src="{{node.image}}" alt="{{node.name_numbered}}"/>{{node.url}} </a>
+  <ul>
+    <li>Goal{{ node['n'] }}: <a href="{{node.url}}">{{node.url}} </a></li>
+    <li>SDG{{ node['n'] }}: <a href="{{ node['sdgLink'] }}">{{ node['sdgLink'] }}</a></li>
+    <li>UN Stats SDG{{ node['n'] }} 2016 Report: <a href="{{ node['sdgReport2016Link'] }}">{{ node['sdgReport2016Link'] }}</a></li>
+  </ul>
   <div style="margin-left: 12px">
   {{ node.tweet_txt }}
   </div>
@@ -604,7 +614,7 @@ output_html = tmpl_html.render(**context)
 print(output_html)
 
 
-# In[29]:
+# In[50]:
 
 output_html_path = DATA_DIR / 'globalgoals.html'
 with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
@@ -612,12 +622,12 @@ with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_html_path)
 
 
-# In[30]:
+# In[51]:
 
 IPython.display.HTML(output_html)
 
 
-# In[31]:
+# In[46]:
 
 import jinja2
 # TODO: prefix un:
@@ -637,9 +647,13 @@ TMPL_RDFA_HTML5 = ("""
     <meta property="#n">{{node.n}}</meta>
   </div>
   <h2><a name="#{{node.slug_md}}">{{ node.name_numbered }}</a></h2>
-  <a property="schema:url" href="{{node.url}}">{{node.url}} </a>
   <a href="{{node.url}}">
     <img src="{{node.image}}" alt="{{node.name_numbered}}"/>{{node.url}} </a>
+  <ul>
+    <li>Goal{{ node['n'] }}: <a href="{{node.url}}" property="schema:url">{{node.url}} </a></li>
+    <li>SDG{{ node['n'] }}: <a href="{{ node['sdgLink'] }}" property="#sdgLink">{{ node['sdgLink'] }}</a></li>
+    <li>UN Stats SDG{{ node['n'] }} 2016 Report: <a href="{{ node['sdgReport2016Link'] }}" property="#sdgReport2016Link">{{ node['sdgReport2016Link'] }}</a></li>
+  </ul>
   <div style="margin-left: 12px">
   {{ node.tweet_txt }}
   </div>
@@ -653,7 +667,7 @@ output_rdfa_html5 = tmpl_rdfa_html5.render(**context)
 print(output_rdfa_html5)
 
 
-# In[32]:
+# In[47]:
 
 output_rdfa_html5_path = DATA_DIR / 'globalgoals.rdfa.html5.html'
 with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
@@ -661,7 +675,7 @@ with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rdfa_html5_path)
 
 
-# In[33]:
+# In[48]:
 
 IPython.display.HTML(output_rdfa_html5)
 
