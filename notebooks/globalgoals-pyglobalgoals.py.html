@@ -11915,7 +11915,7 @@ Requirement already up-to-date: MarkupSafe in /home/wturner/-wrk/-ce27/pyglobalg
 <div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>2.7.12 64bit [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]</td></tr><tr><td>IPython</td><td>4.0.3</td></tr><tr><td>OS</td><td>Linux 4.7.3 200.fc24.x86_64 x86_64 with fedora 24 Twenty_Four</td></tr><tr><td>jupyter</td><td>1.0.0</td></tr><tr><td>bs4</td><td>4.5.1</td></tr><tr><td>html5lib</td><td>0.999999999</td></tr><tr><td>jinja2</td><td>2.8</td></tr><tr><td>requests</td><td>2.11.1</td></tr><tr><td>requests_cache</td><td>0.4.12</td></tr><tr><td>version_information</td><td>1.0.3</td></tr><tr><td colspan='2'>Wed Sep 21 14:19:39 2016 CDT</td></tr></table>
+<table><tr><th>Software</th><th>Version</th></tr><tr><td>Python</td><td>2.7.12 64bit [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]</td></tr><tr><td>IPython</td><td>4.0.3</td></tr><tr><td>OS</td><td>Linux 4.7.3 200.fc24.x86_64 x86_64 with fedora 24 Twenty_Four</td></tr><tr><td>jupyter</td><td>1.0.0</td></tr><tr><td>bs4</td><td>4.5.1</td></tr><tr><td>html5lib</td><td>0.999999999</td></tr><tr><td>jinja2</td><td>2.8</td></tr><tr><td>requests</td><td>2.11.1</td></tr><tr><td>requests_cache</td><td>0.4.12</td></tr><tr><td>version_information</td><td>1.0.3</td></tr><tr><td colspan='2'>Wed Sep 21 14:51:11 2016 CDT</td></tr></table>
 </div>
 
 </div>
@@ -27529,6 +27529,8 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     <span class="n">node</span><span class="p">[</span><span class="s">&#39;name_numbered&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s">. </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;n&#39;</span><span class="p">],</span> <span class="n">node</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
     <span class="n">node</span><span class="p">[</span><span class="s">&#39;slug_rst&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_slugify_single_dash</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
     <span class="n">node</span><span class="p">[</span><span class="s">&#39;slug_md&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_slugify_single_dash</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+    <span class="n">node</span><span class="p">[</span><span class="s">&#39;sdgLink&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;https://sustainabledevelopment.un.org/sdg{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;n&#39;</span><span class="p">])</span>
+    <span class="n">node</span><span class="p">[</span><span class="s">&#39;sdgReport2016Link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;http://unstats.un.org/sdgs/report/2016/goal-{:02d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="s">&#39;n&#39;</span><span class="p">])</span>
     
 <span class="n">print_json_dumps</span><span class="p">(</span><span class="n">goal_tiles</span><span class="p">)</span>
 
@@ -27559,7 +27561,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/no-poverty1.png&#34;, 
     &#34;name_numbered&#34;: &#34;1. No Poverty&#34;, 
     &#34;slug_rst&#34;: &#34;no-poverty&#34;, 
-    &#34;slug_md&#34;: &#34;no-poverty&#34;
+    &#34;slug_md&#34;: &#34;no-poverty&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg1&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-01&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27571,7 +27575,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-2nohunger-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;2. Zero Hunger&#34;, 
     &#34;slug_rst&#34;: &#34;zero-hunger&#34;, 
-    &#34;slug_md&#34;: &#34;zero-hunger&#34;
+    &#34;slug_md&#34;: &#34;zero-hunger&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg2&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-02&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27583,7 +27589,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-3goodhealth-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;3. Good Health &amp; Well-Being&#34;, 
     &#34;slug_rst&#34;: &#34;good-health-well-being&#34;, 
-    &#34;slug_md&#34;: &#34;good-health-well-being&#34;
+    &#34;slug_md&#34;: &#34;good-health-well-being&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg3&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-03&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27595,7 +27603,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/education.png&#34;, 
     &#34;name_numbered&#34;: &#34;4. Quality Education&#34;, 
     &#34;slug_rst&#34;: &#34;quality-education&#34;, 
-    &#34;slug_md&#34;: &#34;quality-education&#34;
+    &#34;slug_md&#34;: &#34;quality-education&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg4&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-04&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27607,7 +27617,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gender1.png&#34;, 
     &#34;name_numbered&#34;: &#34;5. Gender Equality&#34;, 
     &#34;slug_rst&#34;: &#34;gender-equality&#34;, 
-    &#34;slug_md&#34;: &#34;gender-equality&#34;
+    &#34;slug_md&#34;: &#34;gender-equality&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg5&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-05&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27619,7 +27631,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/clean-water.png&#34;, 
     &#34;name_numbered&#34;: &#34;6. Clean Water &amp; Sanitation&#34;, 
     &#34;slug_rst&#34;: &#34;clean-water-sanitation&#34;, 
-    &#34;slug_md&#34;: &#34;clean-water-sanitation&#34;
+    &#34;slug_md&#34;: &#34;clean-water-sanitation&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg6&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-06&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27631,7 +27645,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-7renewableenergy-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;7. Affordable &amp; Clean Energy&#34;, 
     &#34;slug_rst&#34;: &#34;affordable-clean-energy&#34;, 
-    &#34;slug_md&#34;: &#34;affordable-clean-energy&#34;
+    &#34;slug_md&#34;: &#34;affordable-clean-energy&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg7&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-07&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27643,7 +27659,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-8goodjobseconomicgrowth-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;8. Decent Work &amp; Economic Growth&#34;, 
     &#34;slug_rst&#34;: &#34;decent-work-economic-growth&#34;, 
-    &#34;slug_md&#34;: &#34;decent-work-economic-growth&#34;
+    &#34;slug_md&#34;: &#34;decent-work-economic-growth&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg8&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-08&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27655,7 +27673,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-9innovationandinfrastructure-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;9. Industry, Innovation &amp; Infrastructure&#34;, 
     &#34;slug_rst&#34;: &#34;industry-innovation-infrastructure&#34;, 
-    &#34;slug_md&#34;: &#34;industry-innovation-infrastructure&#34;
+    &#34;slug_md&#34;: &#34;industry-innovation-infrastructure&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg9&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-09&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27667,7 +27687,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/reduced-inequality.png&#34;, 
     &#34;name_numbered&#34;: &#34;10. Reduced Inequalities&#34;, 
     &#34;slug_rst&#34;: &#34;reduced-inequalities&#34;, 
-    &#34;slug_md&#34;: &#34;reduced-inequalities&#34;
+    &#34;slug_md&#34;: &#34;reduced-inequalities&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg10&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-10&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27679,7 +27701,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/cities.png&#34;, 
     &#34;name_numbered&#34;: &#34;11. Sustainable Cities and Communities&#34;, 
     &#34;slug_rst&#34;: &#34;sustainable-cities-and-communities&#34;, 
-    &#34;slug_md&#34;: &#34;sustainable-cities-and-communities&#34;
+    &#34;slug_md&#34;: &#34;sustainable-cities-and-communities&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg11&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-11&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27691,7 +27715,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/gg-12responsibleconsumption-english.png&#34;, 
     &#34;name_numbered&#34;: &#34;12. Responsible Consumption &amp; Production&#34;, 
     &#34;slug_rst&#34;: &#34;responsible-consumption-production&#34;, 
-    &#34;slug_md&#34;: &#34;responsible-consumption-production&#34;
+    &#34;slug_md&#34;: &#34;responsible-consumption-production&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg12&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-12&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27703,7 +27729,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/climate.png&#34;, 
     &#34;name_numbered&#34;: &#34;13. Climate Action&#34;, 
     &#34;slug_rst&#34;: &#34;climate-action&#34;, 
-    &#34;slug_md&#34;: &#34;climate-action&#34;
+    &#34;slug_md&#34;: &#34;climate-action&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg13&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-13&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27715,7 +27743,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/water-life.png&#34;, 
     &#34;name_numbered&#34;: &#34;14. Life Below Water&#34;, 
     &#34;slug_rst&#34;: &#34;life-below-water&#34;, 
-    &#34;slug_md&#34;: &#34;life-below-water&#34;
+    &#34;slug_md&#34;: &#34;life-below-water&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg14&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-14&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27727,7 +27757,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/land-life.png&#34;, 
     &#34;name_numbered&#34;: &#34;15. Life on Land&#34;, 
     &#34;slug_rst&#34;: &#34;life-on-land&#34;, 
-    &#34;slug_md&#34;: &#34;life-on-land&#34;
+    &#34;slug_md&#34;: &#34;life-on-land&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg15&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-15&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27739,7 +27771,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/goal-16.png&#34;, 
     &#34;name_numbered&#34;: &#34;16. Peace, Justice and Strong Institutions&#34;, 
     &#34;slug_rst&#34;: &#34;peace-justice-and-strong-institutions&#34;, 
-    &#34;slug_md&#34;: &#34;peace-justice-and-strong-institutions&#34;
+    &#34;slug_md&#34;: &#34;peace-justice-and-strong-institutions&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg16&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-16&#34;
   }, 
   {
     &#34;@type&#34;: &#34;un:GlobalGoal&#34;, 
@@ -27751,7 +27785,9 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
     &#34;image_path&#34;: &#34;./data/images/partnership.png&#34;, 
     &#34;name_numbered&#34;: &#34;17. Partnerships for the Goals&#34;, 
     &#34;slug_rst&#34;: &#34;partnerships-for-the-goals&#34;, 
-    &#34;slug_md&#34;: &#34;partnerships-for-the-goals&#34;
+    &#34;slug_md&#34;: &#34;partnerships-for-the-goals&#34;, 
+    &#34;sdgLink&#34;: &#34;https://sustainabledevelopment.un.org/sdg17&#34;, 
+    &#34;sdgReport2016Link&#34;: &#34;http://unstats.un.org/sdgs/report/2016/goal-17&#34;
   }
 ]
 </pre>
@@ -27764,7 +27800,7 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">build_tweet_for_goal_tile</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
@@ -27812,7 +27848,7 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">IPython.display</span>
@@ -41152,7 +41188,7 @@ INcQBEGQawiCiB7/X4ABAMIU7RdsHFNzAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">TMPL_RST</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
@@ -41431,7 +41467,7 @@ The Global Goals
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">output_rst_path</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s">&#39;globalgoals.rst&#39;</span>
@@ -41461,7 +41497,7 @@ The Global Goals
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">docutils.core</span>
@@ -41679,13 +41715,30 @@ The Global Goals
 </div>
 </div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/wturner/-wrk/-ce27/pyglobalgoals/lib/python2.7/site-packages/bs4/__init__.py:181: UserWarning: No parser was explicitly specified, so I&#39;m using the best available HTML parser for this system (&#34;html5lib&#34;). This usually isn&#39;t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 174 of the file /home/wturner/-wrk/-ce27/pyglobalgoals/lib/python2.7/runpy.py. To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], &#34;html5lib&#34;)
+
+  markup_type=markup_type))
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">output_rst_html</span><span class="p">)</span>
@@ -41699,7 +41752,7 @@ The Global Goals
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <?xml version="1.0" encoding="utf-8" ?>
@@ -42251,7 +42304,7 @@ ul.auto-toc {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">TMPL_MD</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
@@ -42459,7 +42512,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">output_md_path</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s">&#39;globalgoals.md&#39;</span>
@@ -42489,7 +42542,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="n">output_markdown</span><span class="p">)</span>
@@ -42503,7 +42556,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
 <h1 id="The-Global-Goals">The Global Goals<a class="anchor-link" href="#The-Global-Goals">&#182;</a></h1><p><strong>Contents:</strong></p>
@@ -42605,7 +42658,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">context</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">goal_tiles</span><span class="p">)</span>
@@ -42618,7 +42671,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">TMPL_HTML</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
@@ -42860,7 +42913,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">output_html_path</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s">&#39;globalgoals.html&#39;</span>
@@ -42890,7 +42943,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">output_html</span><span class="p">)</span>
@@ -42904,7 +42957,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
@@ -43111,7 +43164,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">jinja2</span>
@@ -43447,7 +43500,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">output_rdfa_html5_path</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s">&#39;globalgoals.rdfa.html5.html&#39;</span>
@@ -43477,7 +43530,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">output_rdfa_html5</span><span class="p">)</span>
@@ -43491,7 +43544,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[54]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
@@ -43783,7 +43836,7 @@ http://www.globalgoals.org/global-goals/partnerships-for-the-goals/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># tmpl_html</span>

@@ -449,6 +449,8 @@ for node in goal_tiles:
     node['name_numbered'] = "%d. %s" % (node['n'], node['name'])
     node['slug_rst'] = _slugify_single_dash(node['name'])
     node['slug_md'] = _slugify_single_dash(node['name'])
+    node['sdgLink'] = 'https://sustainabledevelopment.un.org/sdg{}'.format(node['n'])
+    node['sdgReport2016Link'] = 'http://unstats.un.org/sdgs/report/2016/goal-{:02d}'.format(node['n'])
     
 print_json_dumps(goal_tiles)
 
@@ -457,7 +459,7 @@ with codecs.open(GLOBAL_GOALS_EXTRA_JSONLD_PATH, 'w', 'utf8') as fileobj:
     json.dump(goal_tiles, fileobj, indent=2)
 
 
-# In[39]:
+# In[18]:
 
 def build_tweet_for_goal_tile(node):
      return '#Goal{n}: {name} {url} {image} @TheGlobalGoals #GlobalGoals'.format(**node)
@@ -467,7 +469,7 @@ for node in goal_tiles:
     print(node['tweet_txt'])
 
 
-# In[40]:
+# In[19]:
 
 import IPython.display
 def display_goal_images():
@@ -480,7 +482,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[41]:
+# In[20]:
 
 TMPL_RST = """
 
@@ -510,7 +512,7 @@ print(output_rst)
 
 
 
-# In[42]:
+# In[21]:
 
 output_rst_path = DATA_DIR / 'globalgoals.rst'
 with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
@@ -518,19 +520,19 @@ with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rst_path)
 
 
-# In[43]:
+# In[22]:
 
 import docutils.core
 output_rst_html = docutils.core.publish_string(output_rst, writer_name='html')
 print(bs4.BeautifulSoup(output_rst_html).find(id='the-global-goals'))
 
 
-# In[44]:
+# In[23]:
 
 IPython.display.HTML(output_rst_html)
 
 
-# In[45]:
+# In[24]:
 
 
 TMPL_MD = """
@@ -557,7 +559,7 @@ output_markdown = tmpl_md.render(nodes=goal_tiles)
 print(output_markdown)
 
 
-# In[46]:
+# In[25]:
 
 output_md_path = DATA_DIR / 'globalgoals.md'
 with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
@@ -565,17 +567,17 @@ with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_md_path)
 
 
-# In[47]:
+# In[26]:
 
 IPython.display.Markdown(output_markdown)
 
 
-# In[48]:
+# In[27]:
 
 context = dict(nodes=goal_tiles)
 
 
-# In[49]:
+# In[28]:
 
 TMPL_HTML = """
 
@@ -602,7 +604,7 @@ output_html = tmpl_html.render(**context)
 print(output_html)
 
 
-# In[50]:
+# In[29]:
 
 output_html_path = DATA_DIR / 'globalgoals.html'
 with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
@@ -610,12 +612,12 @@ with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_html_path)
 
 
-# In[51]:
+# In[30]:
 
 IPython.display.HTML(output_html)
 
 
-# In[52]:
+# In[31]:
 
 import jinja2
 # TODO: prefix un:
@@ -651,7 +653,7 @@ output_rdfa_html5 = tmpl_rdfa_html5.render(**context)
 print(output_rdfa_html5)
 
 
-# In[53]:
+# In[32]:
 
 output_rdfa_html5_path = DATA_DIR / 'globalgoals.rdfa.html5.html'
 with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
@@ -659,12 +661,12 @@ with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rdfa_html5_path)
 
 
-# In[54]:
+# In[33]:
 
 IPython.display.HTML(output_rdfa_html5)
 
 
-# In[55]:
+# In[34]:
 
 # tmpl_html
 # tmpl_rdfa_html5

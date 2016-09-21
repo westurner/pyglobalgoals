@@ -9,7 +9,9 @@
     "image_path": "./data/images/no-poverty1.png", 
     "name_numbered": "1. No Poverty", 
     "slug_rst": "no-poverty", 
-    "slug_md": "no-poverty"
+    "slug_md": "no-poverty", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg1", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-01"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -21,7 +23,9 @@
     "image_path": "./data/images/gg-2nohunger-english.png", 
     "name_numbered": "2. Zero Hunger", 
     "slug_rst": "zero-hunger", 
-    "slug_md": "zero-hunger"
+    "slug_md": "zero-hunger", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg2", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-02"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -33,7 +37,9 @@
     "image_path": "./data/images/gg-3goodhealth-english.png", 
     "name_numbered": "3. Good Health & Well-Being", 
     "slug_rst": "good-health-well-being", 
-    "slug_md": "good-health-well-being"
+    "slug_md": "good-health-well-being", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg3", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-03"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -45,7 +51,9 @@
     "image_path": "./data/images/education.png", 
     "name_numbered": "4. Quality Education", 
     "slug_rst": "quality-education", 
-    "slug_md": "quality-education"
+    "slug_md": "quality-education", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg4", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-04"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -57,7 +65,9 @@
     "image_path": "./data/images/gender1.png", 
     "name_numbered": "5. Gender Equality", 
     "slug_rst": "gender-equality", 
-    "slug_md": "gender-equality"
+    "slug_md": "gender-equality", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg5", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-05"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -69,7 +79,9 @@
     "image_path": "./data/images/clean-water.png", 
     "name_numbered": "6. Clean Water & Sanitation", 
     "slug_rst": "clean-water-sanitation", 
-    "slug_md": "clean-water-sanitation"
+    "slug_md": "clean-water-sanitation", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg6", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-06"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -81,7 +93,9 @@
     "image_path": "./data/images/gg-7renewableenergy-english.png", 
     "name_numbered": "7. Affordable & Clean Energy", 
     "slug_rst": "affordable-clean-energy", 
-    "slug_md": "affordable-clean-energy"
+    "slug_md": "affordable-clean-energy", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg7", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-07"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -93,7 +107,9 @@
     "image_path": "./data/images/gg-8goodjobseconomicgrowth-english.png", 
     "name_numbered": "8. Decent Work & Economic Growth", 
     "slug_rst": "decent-work-economic-growth", 
-    "slug_md": "decent-work-economic-growth"
+    "slug_md": "decent-work-economic-growth", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg8", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-08"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -105,7 +121,9 @@
     "image_path": "./data/images/gg-9innovationandinfrastructure-english.png", 
     "name_numbered": "9. Industry, Innovation & Infrastructure", 
     "slug_rst": "industry-innovation-infrastructure", 
-    "slug_md": "industry-innovation-infrastructure"
+    "slug_md": "industry-innovation-infrastructure", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg9", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-09"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -117,7 +135,9 @@
     "image_path": "./data/images/reduced-inequality.png", 
     "name_numbered": "10. Reduced Inequalities", 
     "slug_rst": "reduced-inequalities", 
-    "slug_md": "reduced-inequalities"
+    "slug_md": "reduced-inequalities", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg10", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-10"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -129,7 +149,9 @@
     "image_path": "./data/images/cities.png", 
     "name_numbered": "11. Sustainable Cities and Communities", 
     "slug_rst": "sustainable-cities-and-communities", 
-    "slug_md": "sustainable-cities-and-communities"
+    "slug_md": "sustainable-cities-and-communities", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg11", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-11"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -141,7 +163,9 @@
     "image_path": "./data/images/gg-12responsibleconsumption-english.png", 
     "name_numbered": "12. Responsible Consumption & Production", 
     "slug_rst": "responsible-consumption-production", 
-    "slug_md": "responsible-consumption-production"
+    "slug_md": "responsible-consumption-production", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg12", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-12"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -153,7 +177,9 @@
     "image_path": "./data/images/climate.png", 
     "name_numbered": "13. Climate Action", 
     "slug_rst": "climate-action", 
-    "slug_md": "climate-action"
+    "slug_md": "climate-action", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg13", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-13"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -165,7 +191,9 @@
     "image_path": "./data/images/water-life.png", 
     "name_numbered": "14. Life Below Water", 
     "slug_rst": "life-below-water", 
-    "slug_md": "life-below-water"
+    "slug_md": "life-below-water", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg14", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-14"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -177,7 +205,9 @@
     "image_path": "./data/images/land-life.png", 
     "name_numbered": "15. Life on Land", 
     "slug_rst": "life-on-land", 
-    "slug_md": "life-on-land"
+    "slug_md": "life-on-land", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg15", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-15"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -189,7 +219,9 @@
     "image_path": "./data/images/goal-16.png", 
     "name_numbered": "16. Peace, Justice and Strong Institutions", 
     "slug_rst": "peace-justice-and-strong-institutions", 
-    "slug_md": "peace-justice-and-strong-institutions"
+    "slug_md": "peace-justice-and-strong-institutions", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg16", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-16"
   }, 
   {
     "@type": "un:GlobalGoal", 
@@ -201,6 +233,8 @@
     "image_path": "./data/images/partnership.png", 
     "name_numbered": "17. Partnerships for the Goals", 
     "slug_rst": "partnerships-for-the-goals", 
-    "slug_md": "partnerships-for-the-goals"
+    "slug_md": "partnerships-for-the-goals", 
+    "sdgLink": "https://sustainabledevelopment.un.org/sdg17", 
+    "sdgReport2016Link": "http://unstats.un.org/sdgs/report/2016/goal-17"
   }
 ]
