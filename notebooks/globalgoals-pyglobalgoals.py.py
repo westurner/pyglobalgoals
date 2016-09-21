@@ -105,19 +105,20 @@
 # In[1]:
 
 #!conda install -y beautiful-soup docutils jinja2 requests
-get_ipython().system(u"pip install -U beautifulsoup4 html5lib jinja2 'requests<2.8' requests-cache version-information # tweepy")
+get_ipython().system(u"pip install -U beautifulsoup4 html5lib jinja2 'requests<2.8' requests-cache version-information URLObject")
 
 
 import bs4
 import jinja2
 import requests
 import requests_cache
+import urlobject
 
 requests_cache.install_cache('pyglobalgoals_cache')
 
 #!pip install -U version_information
 get_ipython().magic(u'load_ext version_information')
-get_ipython().magic(u'version_information jupyter, bs4, html5lib, jinja2, requests, requests_cache, version_information')
+get_ipython().magic(u'version_information jupyter, bs4, html5lib, jinja2, requests, requests_cache, version_information, URLObject')
 
 
 # In[2]:
@@ -333,7 +334,7 @@ def requests_download_file(url, dest_path, **kwargs):
     return (url, dest_path)
 
 
-# In[12]:
+# In[ ]:
 
 import urllib
 def urllib_urlretrieve_download_file(url, dest_path):
@@ -344,7 +345,7 @@ def urllib_urlretrieve_download_file(url, dest_path):
     return (url, filename)
 
 
-# In[13]:
+# In[ ]:
 
 
 def deduplicate_on_attr(nodes, attr='image_basename'):
@@ -383,14 +384,14 @@ tiles_jsonld = goal_tiles_to_jsonld(goal_tiles)
 print(json.dumps(tiles_jsonld, indent=2))
 
 
-# In[14]:
+# In[ ]:
 
 #import jupyter.display as display
 import IPython.display as display
 display.Image(goal_tiles[0]['image_path'])
 
 
-# In[15]:
+# In[ ]:
 
 import IPython.display
 for tile in goal_tiles:
@@ -398,7 +399,7 @@ for tile in goal_tiles:
 x
 
 
-# In[16]:
+# In[ ]:
 
 import IPython.display
 def display_goal_images():
@@ -409,7 +410,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[17]:
+# In[ ]:
 
 
 import string
@@ -459,7 +460,7 @@ with codecs.open(GLOBAL_GOALS_EXTRA_JSONLD_PATH, 'w', 'utf8') as fileobj:
     json.dump(goal_tiles, fileobj, indent=2)
 
 
-# In[18]:
+# In[ ]:
 
 def build_tweet_for_goal_tile(node):
      return '#Goal{n}: {name} {url} {image} @TheGlobalGoals #GlobalGoals'.format(**node)
@@ -469,7 +470,7 @@ for node in goal_tiles:
     print(node['tweet_txt'])
 
 
-# In[19]:
+# In[ ]:
 
 import IPython.display
 def display_goal_images():
@@ -482,7 +483,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[38]:
+# In[ ]:
 
 TMPL_RST = """
 
@@ -494,12 +495,12 @@ The Global Goals
 {% for node in nodes %}
 {{ node['name_numbered'] }}
 ======================================================
-| {{ node['url'] }}
 
 .. image:: {{ node['image'] }}{# node['image_path'] #}
    :target: {{ node['url'] }}
    :alt: {{ node['name'] }} 
 
+- Goal{{ node['n'] }}: {{ node['url'] }}
 - SDG{{ node['n'] }}: {{ node['sdgLink'] }}
 - UN Stats SDG{{ node['n'] }} 2016 Report: {{ node['sdgReport2016Link'] }}
 
@@ -515,7 +516,7 @@ print(output_rst)
 
 
 
-# In[21]:
+# In[ ]:
 
 output_rst_path = DATA_DIR / 'globalgoals.rst'
 with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
@@ -523,19 +524,19 @@ with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rst_path)
 
 
-# In[22]:
+# In[ ]:
 
 import docutils.core
 output_rst_html = docutils.core.publish_string(output_rst, writer_name='html')
 print(bs4.BeautifulSoup(output_rst_html).find(id='the-global-goals'))
 
 
-# In[23]:
+# In[ ]:
 
 IPython.display.HTML(output_rst_html)
 
 
-# In[39]:
+# In[ ]:
 
 
 TMPL_MD = """
@@ -565,7 +566,7 @@ output_markdown = tmpl_md.render(nodes=goal_tiles)
 print(output_markdown)
 
 
-# In[25]:
+# In[ ]:
 
 output_md_path = DATA_DIR / 'globalgoals.md'
 with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
@@ -573,17 +574,17 @@ with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_md_path)
 
 
-# In[26]:
+# In[ ]:
 
 IPython.display.Markdown(output_markdown)
 
 
-# In[27]:
+# In[ ]:
 
 context = dict(nodes=goal_tiles)
 
 
-# In[49]:
+# In[ ]:
 
 TMPL_HTML = """
 
@@ -614,7 +615,7 @@ output_html = tmpl_html.render(**context)
 print(output_html)
 
 
-# In[50]:
+# In[ ]:
 
 output_html_path = DATA_DIR / 'globalgoals.html'
 with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
@@ -622,12 +623,12 @@ with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_html_path)
 
 
-# In[51]:
+# In[ ]:
 
 IPython.display.HTML(output_html)
 
 
-# In[46]:
+# In[ ]:
 
 import jinja2
 # TODO: prefix un:
@@ -667,7 +668,7 @@ output_rdfa_html5 = tmpl_rdfa_html5.render(**context)
 print(output_rdfa_html5)
 
 
-# In[47]:
+# In[ ]:
 
 output_rdfa_html5_path = DATA_DIR / 'globalgoals.rdfa.html5.html'
 with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
@@ -675,12 +676,12 @@ with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rdfa_html5_path)
 
 
-# In[48]:
+# In[ ]:
 
 IPython.display.HTML(output_rdfa_html5)
 
 
-# In[34]:
+# In[ ]:
 
 # tmpl_html
 # tmpl_rdfa_html5
@@ -689,4 +690,98 @@ for line in difflib.unified_diff(
     TMPL_HTML.splitlines(),
     TMPL_RDFA_HTML5.splitlines()):
     print(line)
+
+
+# In[ ]:
+
+UNSTATS_SDGS_METADATA_URL = "http://unstats.un.org/sdgs/metadata/"
+url = UNSTATS_SDGS_METADATA_URL
+req = requests.get(url)
+if not req.ok:
+    raise Exception(req)
+bs = bs4.BeautifulSoup(req.content, "html5lib")
+
+
+# In[ ]:
+
+import re
+nodes = []
+panels = bs.findAll('div', {'class': 'panel panel-default'})
+goal_rgx = r'Goal (?P<n>\d+)\.\s*(?P<name>.*)'
+target_rgx = r'Target (?P<name>.*):\s*(?P<description>.*)'
+indicator_rgx = r'Indicator (?P<key>.*):\s*(?P<name>.*)'
+base_url = urlobject.URLObject(UNSTATS_SDGS_METADATA_URL)
+
+for panel in panels:
+    node = collections.OrderedDict()
+    node['@type'] = 'un:GlobalGoal'
+    node_heading = panel.find('h4').text
+    node['name'] = node_heading
+    matchobj = re.match(goal_rgx, node_heading)
+    if matchobj is None:
+        raise Exception(('RegexFailed', node_heading))
+    node.update(matchobj.groupdict())
+    node['targets'] = []
+    
+    for target_heading in panel.findAll('h5'):
+        target = collections.OrderedDict()
+        target['@type'] = 'un:Target'
+        # target['heading'] = target_heading.text
+        target.update(re.match(target_rgx, target_heading.text).groupdict())
+        target['indicators'] = []
+        indicator_list = target_heading.findNextSibling('ul')
+        if indicator_list == -1:
+            continue
+        for indicator_node in indicator_list.findChildren('li', recursive=False):
+            indicator_header = indicator_node.find('small')
+            if indicator_header == -1:
+                continue
+            indicator = collections.OrderedDict()
+            indicator['@type'] = 'un:Indicator'
+            matchobj = re.match(indicator_rgx, indicator_header.getText(strip=True))
+            if matchobj is None:
+                raise Exception(('RegexFailed', indicator_header))
+            metadata_list = indicator_node.find('ul', {'class': 'list-inline'})
+            indicator.update(matchobj.groupdict())
+            indicator['alternateName'] = u'Indicator {}'.format(indicator['key'])
+            indicator['metadata'] = []
+            if metadata_list != -1:
+                for link_node in metadata_list.findAll('a'):
+                    metadata = collections.OrderedDict()
+                    metadata['@type'] = 'schema:CreativeWork'
+                    metadata['url'] = base_url.with_path(link_node.get('href'))
+                    indicator['metadata'].append(metadata)
+            target['indicators'].append(indicator)
+        node['targets'].append(target)
+    nodes.append(node)
+    
+indicators = []
+indicators_by_goal_target = collections.OrderedDict()
+    
+for goal in nodes:
+    print(('Goal', goal['n'], goal['name']))
+    # print(goal['heading'])
+    for target in goal['targets']:
+        print(('  Target', target['name'], target['description']))
+        for indicator in target['indicators']:
+            print (('    Indicator', indicator['key'], indicator['name']))
+            indicators.append(indicator)
+            l = indicators_by_goal_target.setdefault(indicator['name'], [])
+            l.append((goal['n'], target['name']))
+            
+print(len(indicators))
+print(len(indicators_by_goal_target))
+for indicator, goal_targets in indicators_by_goal_target.items():
+    if len(goal_targets) > 1:
+        print((indicator, goal_targets))
+    
+
+
+# In[ ]:
+
+GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD = json.dumps(nodes, indent=2)
+print(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD)
+GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD_PATH = DATA_DIR / 'globalgoals-goal-target-indicators.jsonld'
+with codecs.open(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD_PATH, 'w', encoding='utf8') as f:
+    f.write(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD)
 
