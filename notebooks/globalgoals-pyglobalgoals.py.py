@@ -220,6 +220,7 @@ def build_default_context():
     context = collections.OrderedDict()
     # context["dc"] = "http://purl.org/dc/elements/1.1/"
     context["schema"] = "http://schema.org/"
+    context["un"] = "http://schema.un.org/"
     # context["xsd"] = "http://www.w3.org/2001/XMLSchema#"
     # context["ex"] = "http://example.org/vocab#"
     # context["ex:contains"] = {
@@ -334,7 +335,7 @@ def requests_download_file(url, dest_path, **kwargs):
     return (url, dest_path)
 
 
-# In[ ]:
+# In[12]:
 
 import urllib
 def urllib_urlretrieve_download_file(url, dest_path):
@@ -345,7 +346,7 @@ def urllib_urlretrieve_download_file(url, dest_path):
     return (url, filename)
 
 
-# In[ ]:
+# In[13]:
 
 
 def deduplicate_on_attr(nodes, attr='image_basename'):
@@ -384,14 +385,14 @@ tiles_jsonld = goal_tiles_to_jsonld(goal_tiles)
 print(json.dumps(tiles_jsonld, indent=2))
 
 
-# In[ ]:
+# In[14]:
 
 #import jupyter.display as display
 import IPython.display as display
 display.Image(goal_tiles[0]['image_path'])
 
 
-# In[ ]:
+# In[15]:
 
 import IPython.display
 for tile in goal_tiles:
@@ -399,7 +400,7 @@ for tile in goal_tiles:
 x
 
 
-# In[ ]:
+# In[16]:
 
 import IPython.display
 def display_goal_images():
@@ -410,7 +411,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[ ]:
+# In[17]:
 
 
 import string
@@ -447,6 +448,7 @@ def _slugify_single_dash(txt):
             
 
 for node in goal_tiles:
+    node['@id'] = 'http://schema.un.org/#Goal{}'.format(node['n'])
     node['name_numbered'] = "%d. %s" % (node['n'], node['name'])
     node['slug_rst'] = _slugify_single_dash(node['name'])
     node['slug_md'] = _slugify_single_dash(node['name'])
@@ -457,10 +459,10 @@ print_json_dumps(goal_tiles)
 
 GLOBAL_GOALS_EXTRA_JSONLD_PATH = DATA_DIR / 'globalgoals-extra.jsonld'
 with codecs.open(GLOBAL_GOALS_EXTRA_JSONLD_PATH, 'w', 'utf8') as fileobj:
-    json.dump(goal_tiles, fileobj, indent=2)
+    json.dump(goal_tiles_to_jsonld(goal_tiles), fileobj, indent=2)
 
 
-# In[ ]:
+# In[18]:
 
 def build_tweet_for_goal_tile(node):
      return '#Goal{n}: {name} {url} {image} @TheGlobalGoals #GlobalGoals'.format(**node)
@@ -470,7 +472,7 @@ for node in goal_tiles:
     print(node['tweet_txt'])
 
 
-# In[ ]:
+# In[19]:
 
 import IPython.display
 def display_goal_images():
@@ -483,7 +485,7 @@ x = list(display_goal_images())
 IPython.display.display(*x)
 
 
-# In[ ]:
+# In[20]:
 
 TMPL_RST = """
 
@@ -516,7 +518,7 @@ print(output_rst)
 
 
 
-# In[ ]:
+# In[21]:
 
 output_rst_path = DATA_DIR / 'globalgoals.rst'
 with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
@@ -524,19 +526,19 @@ with codecs.open(output_rst_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rst_path)
 
 
-# In[ ]:
+# In[22]:
 
 import docutils.core
 output_rst_html = docutils.core.publish_string(output_rst, writer_name='html')
 print(bs4.BeautifulSoup(output_rst_html).find(id='the-global-goals'))
 
 
-# In[ ]:
+# In[23]:
 
 IPython.display.HTML(output_rst_html)
 
 
-# In[ ]:
+# In[24]:
 
 
 TMPL_MD = """
@@ -566,7 +568,7 @@ output_markdown = tmpl_md.render(nodes=goal_tiles)
 print(output_markdown)
 
 
-# In[ ]:
+# In[25]:
 
 output_md_path = DATA_DIR / 'globalgoals.md'
 with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
@@ -574,17 +576,17 @@ with codecs.open(output_md_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_md_path)
 
 
-# In[ ]:
+# In[26]:
 
 IPython.display.Markdown(output_markdown)
 
 
-# In[ ]:
+# In[27]:
 
 context = dict(nodes=goal_tiles)
 
 
-# In[ ]:
+# In[28]:
 
 TMPL_HTML = """
 
@@ -615,7 +617,7 @@ output_html = tmpl_html.render(**context)
 print(output_html)
 
 
-# In[ ]:
+# In[29]:
 
 output_html_path = DATA_DIR / 'globalgoals.html'
 with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
@@ -623,12 +625,12 @@ with codecs.open(output_html_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_html_path)
 
 
-# In[ ]:
+# In[30]:
 
 IPython.display.HTML(output_html)
 
 
-# In[ ]:
+# In[31]:
 
 import jinja2
 # TODO: prefix un:
@@ -668,7 +670,7 @@ output_rdfa_html5 = tmpl_rdfa_html5.render(**context)
 print(output_rdfa_html5)
 
 
-# In[ ]:
+# In[32]:
 
 output_rdfa_html5_path = DATA_DIR / 'globalgoals.rdfa.html5.html'
 with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
@@ -676,12 +678,12 @@ with codecs.open(output_rdfa_html5_path, 'w', encoding='utf-8') as f:
     print("# wrote goals to %r" % output_rdfa_html5_path)
 
 
-# In[ ]:
+# In[33]:
 
 IPython.display.HTML(output_rdfa_html5)
 
 
-# In[ ]:
+# In[34]:
 
 # tmpl_html
 # tmpl_rdfa_html5
@@ -692,7 +694,7 @@ for line in difflib.unified_diff(
     print(line)
 
 
-# In[ ]:
+# In[35]:
 
 UNSTATS_SDGS_METADATA_URL = "http://unstats.un.org/sdgs/metadata/"
 url = UNSTATS_SDGS_METADATA_URL
@@ -702,7 +704,7 @@ if not req.ok:
 bs = bs4.BeautifulSoup(req.content, "html5lib")
 
 
-# In[ ]:
+# In[36]:
 
 import re
 nodes = []
@@ -721,6 +723,7 @@ for panel in panels:
     if matchobj is None:
         raise Exception(('RegexFailed', node_heading))
     node.update(matchobj.groupdict())
+    node['@id'] =  'http://schema.un.org/#Goal{}'.format(node['n']) # TODO
     node['targets'] = []
     
     for target_heading in panel.findAll('h5'):
@@ -728,7 +731,8 @@ for panel in panels:
         target['@type'] = 'un:Target'
         # target['heading'] = target_heading.text
         target.update(re.match(target_rgx, target_heading.text).groupdict())
-        target['indicators'] = []
+        target['@id'] = 'http://schema.un.org/#Target{}'.format(target['name'])
+        target['indicators'] = []  # TODO: this only works w/ a list of @id (nested objects are not yet supported)
         indicator_list = target_heading.findNextSibling('ul')
         if indicator_list == -1:
             continue
@@ -744,7 +748,8 @@ for panel in panels:
             metadata_list = indicator_node.find('ul', {'class': 'list-inline'})
             indicator.update(matchobj.groupdict())
             indicator['alternateName'] = u'Indicator {}'.format(indicator['key'])
-            indicator['metadata'] = []
+            indicator['@id'] = 'http://schema.un.org/#Indicator{}'.format(indicator['key']) # TODO
+            indicator['metadata'] = [] # TODO: this only works w/ a list of @id (nested objects are not yet supported)
             if metadata_list != -1:
                 for link_node in metadata_list.findAll('a'):
                     metadata = collections.OrderedDict()
@@ -777,11 +782,45 @@ for indicator, goal_targets in indicators_by_goal_target.items():
     
 
 
-# In[ ]:
+# In[37]:
 
-GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD = json.dumps(nodes, indent=2)
+
+def build_extended_context():
+    c = build_default_context()
+    c['targets'] = {'@container': '@list'}
+    c['indicators'] = {'@container': '@list'}
+    c['metadata'] = {'@container': '@list'}
+    return c
+
+EXTENDED_CONTEXT = build_extended_context()
+
+data = collections.OrderedDict()
+data['@context'] = EXTENDED_CONTEXT
+data['@graph'] = nodes
+GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD = json.dumps(data, indent=2)
 print(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD)
 GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD_PATH = DATA_DIR / 'globalgoals-goal-target-indicators.jsonld'
 with codecs.open(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD_PATH, 'w', encoding='utf8') as f:
     f.write(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD)
+
+
+# In[38]:
+
+# This is not a merge.
+if 0:
+    nodes.extend(goal_tiles)
+    print(json.dumps(nodes, indent=2))
+
+
+# In[39]:
+
+get_ipython().system(u'pip install rdflib-jsonld')
+import rdflib
+
+
+# In[40]:
+
+g = rdflib.Graph()
+g.parse(GLOBAL_GOALS_GOAL_TARGET_INDICATOR_METADATA_JSONLD_PATH, format='application/ld+json')
+print(len(g))
 
