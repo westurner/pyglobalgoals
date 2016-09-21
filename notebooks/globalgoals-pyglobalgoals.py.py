@@ -1,12 +1,15 @@
 
 # coding: utf-8
 
-# # @TheGlobalGoals for Sustainable Development
+# # globalgoals-pyglobalgoals.py.ipynb
+# 
+# A jupyter notebook demonstrating HTML parsing, JSON-LD, RDFa, and schema.org in order to add Schema.org RDFa markup to @TheGlobalGoals for Sustainable Development at http://www.globalgoals.org/
 
 # ## Background
 # 
 # * Homepage: **http://www.globalgoals.org/**
 # - Twitter: https://twitter.com/TheGlobalGoals
+# - Twitter: https://twitter.com/GlobalGoalsUN
 # - Instagram: https://instagram.com/TheGlobalGoals/
 # - Facebook: https://www.facebook.com/globalgoals.org
 # - YouTube: https://www.youtube.com/channel/UCRfuAYy7MesZmgOi1Ezy0ng/
@@ -18,6 +21,18 @@
 #   - https://twitter.com/hashtag/TheGlobalGoals
 #   - https://instagram.com/explore/tags/TheGlobalGoals/
 #   - https://www.facebook.com/hashtag/TheGlobalGoals
+# - Hashtag: #Goal17
+#   - https://twitter.com/hashtag/Goal17
+#   - https://instagram.com/explore/tags/Goal17/
+#   - https://www.facebook.com/hashtag/Goal17
+# - Hashtag: #GlobalGoal17
+#   - https://twitter.com/hashtag/GlobalGoal17
+#   - https://instagram.com/explore/tags/GlobalGoal17/
+#   - https://www.facebook.com/hashtag/GlobalGoal17
+# - Hashtag: #GG17
+#   - https://twitter.com/hashtag/GG17
+#   - https://instagram.com/explore/tags/GG17/
+#   - https://www.facebook.com/hashtag/GG17
 # 
 # 
 # ### pyglobalgoals
@@ -49,7 +64,7 @@
 #   * Src: https://github.com/westurner/pyglobalgoals/blob/master/notebooks/globalgoals-pyglobalgoals.py.py
 #   * Src: https://github.com/westurner/pyglobalgoals/blob/develop/notebooks/globalgoals-pyglobalgoals.py.ipynb
 #   * Src: https://github.com/westurner/pyglobalgoals/blob/v0.1.2/notebooks/globalgoals-pyglobalgoals.py.ipynb
-#   * Src: https://github.com/westurner/pyglobalgoals/blob/v0.2.1/notebooks/globalgoals-pyglobalgoals.py.ipynb
+#   * Src: https://github.com/westurner/pyglobalgoals/blob/v0.2.5/notebooks/globalgoals-pyglobalgoals.py.ipynb
 # 
 #   * [x] Download HTML with requests
 #   * [x] Parse HTML with beautifulsoup
@@ -74,11 +89,23 @@
 # * Standard: http://www.w3.org/TR/rdfa-core/
 # * Docs: http://www.w3.org/TR/rdfa-primer/
 # * Hashtag: #RDFa
+# 
+# ## License
+# 
+# * pyglobalgoals: BSD License
+#   (``LICENSE``)
+# * GlobalGoals explanations and descriptions:
+#   Creative Commons Attribution-ShareAlike 3.0
+#   https://creativecommons.org/licenses/by-sa/3.0/
+#   (``LICENSE.cc-by-sa-3.0.html``)
+# * GlobalGoals images (provided by Getty Images):
+#   http://www.globalgoals.org/asset-licence/
+#   (``LICENSE.globalgoals-asset-license.html``)
 
 # In[1]:
 
 #!conda install -y beautiful-soup docutils jinja2 requests
-get_ipython().system(u"pip install -U beautifulsoup4 jinja2 'requests<2.8' requests-cache version-information # tweepy")
+get_ipython().system(u"pip install -U beautifulsoup4 html5lib jinja2 'requests<2.8' requests-cache version-information # tweepy")
 
 
 import bs4
@@ -90,7 +117,7 @@ requests_cache.install_cache('pyglobalgoals_cache')
 
 #!pip install -U version_information
 get_ipython().magic(u'load_ext version_information')
-get_ipython().magic(u'version_information jupyter, bs4, jinja2, requests, requests_cache, version_information')
+get_ipython().magic(u'version_information jupyter, bs4, html5lib, jinja2, requests, requests_cache, version_information')
 
 
 # In[2]:
@@ -106,6 +133,7 @@ req = requests.get(url)
 if not req.ok:
     raise Exception(req)
 content = req.content
+print(type(req.content))
 print(content[:20])
 
 
@@ -116,7 +144,7 @@ print(content[:20])
 
 # In[3]:
 
-bs = bs4.BeautifulSoup(req.content)
+bs = bs4.BeautifulSoup(req.content, "html5lib")
 print(bs.prettify())
 
 
@@ -130,6 +158,8 @@ pp(tiles)
 
 tile = tiles[0]
 print(tile)
+print('##')
+print(tile.prettify())
 
 
 # In[6]:
@@ -161,13 +191,17 @@ def get_data_from_goal_tile_wrapper_div(node, n=None):
     return output
 
 def get_goal_tile_data(bs):
-    for i, tile in enumerate(bs.find_all(class_='goal-tile-wrapper'), 1):
-        yield get_data_from_goal_tile_wrapper_div(tile, n=i) 
+    for i, tile in enumerate(bs.find_all(class_='goal-tile-wrapper')[:-1], 1):
+        try:
+            yield get_data_from_goal_tile_wrapper_div(tile, n=i)
+        except KeyError as e:
+            print((i, tile))
+            raise
         
 tiles = list(get_goal_tile_data(bs))
 import json
 print(json.dumps(tiles, indent=2))
-goal_tiles = tiles[:-1]
+goal_tiles = tiles
 
 
 # In[ ]:
