@@ -16,7 +16,7 @@ The Global Goals
 
 ..
 
-   ##gg1 No Poverty http://www.globalgoals.org/global-goals/no-poverty/ http://cdn.globalgoals.org/2015/07/no-poverty1.png @TheGlobalGoals #GlobalGoals
+   #Goal1: No Poverty http://www.globalgoals.org/global-goals/no-poverty/ http://cdn.globalgoals.org/2015/07/no-poverty1.png @TheGlobalGoals #GlobalGoals
    
 
 2. Zero Hunger
@@ -29,7 +29,7 @@ The Global Goals
 
 ..
 
-   ##gg2 Zero Hunger http://www.globalgoals.org/global-goals/no-hunger/ http://cdn.globalgoals.org/2015/07/gg-2nohunger-english.png @TheGlobalGoals #GlobalGoals
+   #Goal2: Zero Hunger http://www.globalgoals.org/global-goals/no-hunger/ http://cdn.globalgoals.org/2015/07/gg-2nohunger-english.png @TheGlobalGoals #GlobalGoals
    
 
 3. Good Health & Well-Being
@@ -42,7 +42,7 @@ The Global Goals
 
 ..
 
-   ##gg3 Good Health & Well-Being http://www.globalgoals.org/global-goals/good-health/ http://cdn.globalgoals.org/2015/07/gg-3goodhealth-english.png @TheGlobalGoals #GlobalGoals
+   #Goal3: Good Health & Well-Being http://www.globalgoals.org/global-goals/good-health/ http://cdn.globalgoals.org/2015/07/gg-3goodhealth-english.png @TheGlobalGoals #GlobalGoals
    
 
 4. Quality Education
@@ -55,7 +55,7 @@ The Global Goals
 
 ..
 
-   ##gg4 Quality Education http://www.globalgoals.org/global-goals/quality-education/ http://cdn.globalgoals.org/2015/07/education.png @TheGlobalGoals #GlobalGoals
+   #Goal4: Quality Education http://www.globalgoals.org/global-goals/quality-education/ http://cdn.globalgoals.org/2015/07/education.png @TheGlobalGoals #GlobalGoals
    
 
 5. Gender Equality
@@ -68,7 +68,7 @@ The Global Goals
 
 ..
 
-   ##gg5 Gender Equality http://www.globalgoals.org/global-goals/gender-equality/ http://cdn.globalgoals.org/2015/07/gender1.png @TheGlobalGoals #GlobalGoals
+   #Goal5: Gender Equality http://www.globalgoals.org/global-goals/gender-equality/ http://cdn.globalgoals.org/2015/07/gender1.png @TheGlobalGoals #GlobalGoals
    
 
 6. Clean Water & Sanitation
@@ -81,7 +81,7 @@ The Global Goals
 
 ..
 
-   ##gg6 Clean Water & Sanitation http://www.globalgoals.org/global-goals/clean-water-sanitation/ http://cdn.globalgoals.org/2015/07/clean-water.png @TheGlobalGoals #GlobalGoals
+   #Goal6: Clean Water & Sanitation http://www.globalgoals.org/global-goals/clean-water-sanitation/ http://cdn.globalgoals.org/2015/07/clean-water.png @TheGlobalGoals #GlobalGoals
    
 
 7. Affordable & Clean Energy
@@ -94,7 +94,7 @@ The Global Goals
 
 ..
 
-   ##gg7 Affordable & Clean Energy http://www.globalgoals.org/global-goals/modern-energy/ http://cdn.globalgoals.org/2015/07/gg-7renewableenergy-english.png @TheGlobalGoals #GlobalGoals
+   #Goal7: Affordable & Clean Energy http://www.globalgoals.org/global-goals/modern-energy/ http://cdn.globalgoals.org/2015/07/gg-7renewableenergy-english.png @TheGlobalGoals #GlobalGoals
    
 
 8. Decent Work & Economic Growth
@@ -107,7 +107,7 @@ The Global Goals
 
 ..
 
-   ##gg8 Decent Work & Economic Growth http://www.globalgoals.org/global-goals/good-jobs-and-economic/ http://cdn.globalgoals.org/2015/07/gg-8goodjobseconomicgrowth-english.png @TheGlobalGoals #GlobalGoals
+   #Goal8: Decent Work & Economic Growth http://www.globalgoals.org/global-goals/good-jobs-and-economic/ http://cdn.globalgoals.org/2015/07/gg-8goodjobseconomicgrowth-english.png @TheGlobalGoals #GlobalGoals
    
 
 9. Industry, Innovation & Infrastructure
@@ -120,7 +120,7 @@ The Global Goals
 
 ..
 
-   ##gg9 Industry, Innovation & Infrastructure http://www.globalgoals.org/global-goals/innovation-and-infrastructure/ http://cdn.globalgoals.org/2015/07/gg-9innovationandinfrastructure-english.png @TheGlobalGoals #GlobalGoals
+   #Goal9: Industry, Innovation & Infrastructure http://www.globalgoals.org/global-goals/innovation-and-infrastructure/ http://cdn.globalgoals.org/2015/07/gg-9innovationandinfrastructure-english.png @TheGlobalGoals #GlobalGoals
    
 
 10. Reduced Inequalities
@@ -133,7 +133,7 @@ The Global Goals
 
 ..
 
-   ##gg10 Reduced Inequalities http://www.globalgoals.org/global-goals/reduced-inequalities/ http://cdn.globalgoals.org/2015/07/reduced-inequality.png @TheGlobalGoals #GlobalGoals
+   #Goal10: Reduced Inequalities http://www.globalgoals.org/global-goals/reduced-inequalities/ http://cdn.globalgoals.org/2015/07/reduced-inequality.png @TheGlobalGoals #GlobalGoals
    
 
 11. Sustainable Cities and Communities
@@ -146,7 +146,7 @@ The Global Goals
 
 ..
 
-   ##gg11 Sustainable Cities and Communities http://www.globalgoals.org/global-goals/sustainable-cities-and-communities/ http://cdn.globalgoals.org/2015/07/cities.png @TheGlobalGoals #GlobalGoals
+   #Goal11: Sustainable Cities and Communities http://www.globalgoals.org/global-goals/sustainable-cities-and-communities/ http://cdn.globalgoals.org/2015/07/cities.png @TheGlobalGoals #GlobalGoals
    
 
 12. Responsible Consumption & Production
@@ -159,7 +159,7 @@ The Global Goals
 
 ..
 
-   ##gg12 Responsible Consumption & Production http://www.globalgoals.org/global-goals/responsible-consumption/ http://cdn.globalgoals.org/2015/07/gg-12responsibleconsumption-english.png @TheGlobalGoals #GlobalGoals
+   #Goal12: Responsible Consumption & Production http://www.globalgoals.org/global-goals/responsible-consumption/ http://cdn.globalgoals.org/2015/07/gg-12responsibleconsumption-english.png @TheGlobalGoals #GlobalGoals
    
 
 13. Climate Action
@@ -172,7 +172,7 @@ The Global Goals
 
 ..
 
-   ##gg13 Climate Action http://www.globalgoals.org/global-goals/protect-the-planet/ http://cdn.globalgoals.org/2015/07/climate.png @TheGlobalGoals #GlobalGoals
+   #Goal13: Climate Action http://www.globalgoals.org/global-goals/protect-the-planet/ http://cdn.globalgoals.org/2015/07/climate.png @TheGlobalGoals #GlobalGoals
    
 
 14. Life Below Water
@@ -185,7 +185,7 @@ The Global Goals
 
 ..
 
-   ##gg14 Life Below Water http://www.globalgoals.org/global-goals/life-below-water/ http://cdn.globalgoals.org/2015/07/water-life.png @TheGlobalGoals #GlobalGoals
+   #Goal14: Life Below Water http://www.globalgoals.org/global-goals/life-below-water/ http://cdn.globalgoals.org/2015/07/water-life.png @TheGlobalGoals #GlobalGoals
    
 
 15. Life on Land
@@ -198,7 +198,7 @@ The Global Goals
 
 ..
 
-   ##gg15 Life on Land http://www.globalgoals.org/global-goals/life-on-land/ http://cdn.globalgoals.org/2015/07/land-life.png @TheGlobalGoals #GlobalGoals
+   #Goal15: Life on Land http://www.globalgoals.org/global-goals/life-on-land/ http://cdn.globalgoals.org/2015/07/land-life.png @TheGlobalGoals #GlobalGoals
    
 
 16. Peace, Justice and Strong Institutions
@@ -211,7 +211,7 @@ The Global Goals
 
 ..
 
-   ##gg16 Peace, Justice and Strong Institutions http://www.globalgoals.org/global-goals/peace-and-justice/ http://cdn.globalgoals.org/2015/07/goal-16.png @TheGlobalGoals #GlobalGoals
+   #Goal16: Peace, Justice and Strong Institutions http://www.globalgoals.org/global-goals/peace-and-justice/ http://cdn.globalgoals.org/2015/07/goal-16.png @TheGlobalGoals #GlobalGoals
    
 
 17. Partnerships for the Goals
@@ -224,5 +224,5 @@ The Global Goals
 
 ..
 
-   ##gg17 Partnerships for the Goals http://www.globalgoals.org/global-goals/partnerships-for-the-goals/ http://cdn.globalgoals.org/2015/07/partnership.png @TheGlobalGoals #GlobalGoals
+   #Goal17: Partnerships for the Goals http://www.globalgoals.org/global-goals/partnerships-for-the-goals/ http://cdn.globalgoals.org/2015/07/partnership.png @TheGlobalGoals #GlobalGoals
    
