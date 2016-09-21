@@ -45,3 +45,4 @@ docs/_build
 # pyglobalgoals cache
 notebooks/pyglobalgoals_cache.sqlite
 notebooks/.ipynb_checkpoints/
+.ipynb_checkpoints/
