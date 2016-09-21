@@ -109,5 +109,9 @@ jupyter-notebook:
 	jupyter-notebook .
 
 nbconvert:
-	jupyter-nbconvert ./notebooks/*.ipynb --to python
-	jupyter-nbconvert ./notebooks/*.ipynb --to html
+	find . -name '*.ipynb' ! -wholename '*.ipynb_checkpoints/*' -print0 \
+	| while read -d $$'\0' file; do \
+		echo "$$file"; \
+		jupyter nbconvert "$$file" --to html; \
+		jupyter nbconvert "$$file" --to python; \
+	done;
